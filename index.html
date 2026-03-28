@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Gallery</title>
+    <link rel="stylesheet" href="https://latex.vercel.app/style.css">
+    <link rel="stylesheet" href="https://latex.vercel.app/prism/prism.css">
+    <link rel="stylesheet" href="https://latex.vercel.app/lang/es.css" />
+
+    <script type="text/javascript" charset="UTF-8" src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+
+    <script>
+        MathJax = {
+        tex: {
+            inlineMath: [['$', '$'],],
+        },
+        }
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+<body>
+
+    <h1>Math Gallery</h1>
+
+    <p>
+        En esta página muestro algunos applets interactivos que he hecho con JavaScript, hasta ahora todos son usando <a href="https://jsxgraph.uni-bayreuth.de/home/">JSXGraph</a> 
+    </p>
+
+    <br>
+
+    <h3>Ciencias de la computación</h3>
+
+    <details open>
+        <summary>Perceptrón</summary>
+        <div id="perceptron" class="jxgbox" style="width:80%; aspect-ratio: 1 / 1; border: 2px solid black;"></div>
+    </details>
+
+
+    <h3>Grafos</h3>
+
+    <details>
+        <summary>Grafo bipartito</summary>
+        <div id="bipartite" class="jxgbox" style="width:80%; aspect-ratio: 1 / 1; border: 2px solid black;"></div>
+    </details>
+
+    <h3>Álgebra Lineal</h3>
+
+    <details>
+        <summary>Producto punto y ángulo entre dos vectores</summary>
+        <div id="dotproduct" class="jxgbox" style="width:80%; aspect-ratio: 1 / 1; border: 2px solid black;"></div>
+    </details>
+
+    <h3>Cálculo y Análisis Real</h3>
+
+    <details>
+        <summary>Interpretación geométrica de la derivada</summary>
+        <div id="derivation" class="jxgbox" style="width:80%; aspect-ratio: 16 / 9; border: 2px solid black;"></div>
+    </details>
+
+
+    <details>
+        <summary>La bola abierta es un conjunto abierto (Ejemplo en $\mathbb{R}^2$)</summary>
+        <div id="open_ball" class="jxgbox" style="width:80%; aspect-ratio: 1 / 1; border: 2px solid black;"></div>
+    </details>
+
+    <h3>Análisis Complejo</h3>
+
+
+    <details>
+        <summary>Interpretación geométrica de multiplicar dos números complejos</summary>
+        <div id="complex_multiplication" class="jxgbox" style="width:80%; aspect-ratio: 1 / 1; border: 2px solid black;"></div>
+    </details>
+
+    
+
+
+    <script src="./open_ball.js"></script>
+
+    <script src="./complex_multiplication.js"></script>
+
+    <script src="./derivation.js"></script>
+
+    <script src="./dotproduct.js"></script>
+
+    <script src="./bipartite.js"> </script>
+
+    <script src="./perceptron.js"> </script>
+
+</body>
+</html>
