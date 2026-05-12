@@ -23,15 +23,27 @@ function perceptron_applet(board)
 
     for (let i = 0; i < 6; i++) 
     {
-        var wlabel = '$w_'+ i + '$'
-        var xlabel = '$x_'+ i + '$'
+        if (i != 4)
+        {
+            var intlabel
+            if (i == 5) intlabel = 'n'
+            else intlabel = i
+            
+            var wlabel = '$w_'+ intlabel + '$'
+            var xlabel = '$x_'+ intlabel + '$'
 
-        var s = board.create('segment', [[1,0], [-4, y - 0.5]], {layer:5, name:wlabel, fixed:true, withLabel:true, label:{offset:[2*y-4, 5*y]}});
-        var p1 = board.create('point', [-4.0, y], {visible: false});
-        var p2 = board.create('point', [-5.0, y], {visible: false});
-        var pol = board.create('regularpolygon', [p1, p2, 4], {color: '#69c384', withLines:false, name:xlabel, withLabel:true, opacity:1, label:{offset:[-4, 0]}});
-        pol.vertices[2].setAttribute({visible: false});
-        pol.vertices[3].setAttribute({visible: false});
+            var s = board.create('segment', [[1,0], [-4, y - 0.5]], {layer:5, name:wlabel, fixed:true, withLabel:true, label:{offset:[2*y-4, 5*y]}});
+            var p1 = board.create('point', [-4.0, y], {visible: false});
+            var p2 = board.create('point', [-5.0, y], {visible: false});
+            var pol = board.create('regularpolygon', [p1, p2, 4], {color: '#69c384', withLines:false, name:xlabel, withLabel:true, opacity:1, label:{offset:[-4, 0]}});
+            pol.vertices[2].setAttribute({visible: false});
+            pol.vertices[3].setAttribute({visible: false});
+        }
+        else
+        {
+            var dots1 = board.create('text', [-4.5, y-0.5, '$\\vdots$'], {fontSize: 20, fixed:true});
+            var dots2 = board.create('text', [-2.5, y+0.75, '$\\vdots$'], {fontSize: 20, fixed:true});
+        }
         y = y - 2;
 
     }
@@ -39,7 +51,7 @@ function perceptron_applet(board)
     var neuron = board.create('circle', [[1,0], 2.1], {color:'#e7aaff', layer:10, fixed:true});
 
     var sumtext = board.create('text', [-0.1, 0.3, '$z =w^{\\top} x + b=$'],{fontSize: 10, fixed:true})
-    var sumtext2 = board.create('text', [-0.9, -0.2, '$w_0\\cdot x_0 + \\dots + w_5\\cdot x_5+b$'],{fontSize: 10, fixed:true})
+    var sumtext2 = board.create('text', [-0.9, -0.2, '$w_0\\cdot x_0 + \\dots + w_n\\cdot x_n+b$'],{fontSize: 10, fixed:true})
 
     var output = board.create('regularpolygon', [[4, -0.5], [5,-0.5], 4], {color: '#62a3e8', withLines:false, name:'$H(z)$', withLabel:true, layer:10, opacity:1, label:{offset:[-15, 0]}})
     output.vertices[0].setAttribute({visible: false});
